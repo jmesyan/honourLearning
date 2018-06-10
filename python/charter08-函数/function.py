@@ -129,4 +129,66 @@ show_magicians(magicians)
 
 # 了不起的魔术师 :在你为完成练习8-9而编写的程序中，编写一个名为make_great() 的函数，对魔术师列表进行修改，在每个魔术师的名字中都加入字样“the
 # Great”。调用函数show_magicians() ，确认魔术师列表确实变了
-def make_great(ma)
+def make_great(magicians):
+    length = len(magicians)
+    while(length > 0):
+            length = length-1
+            magicians[length] = "the Great "+magicians[length]
+    return magicians
+
+
+# make_great(magicians)
+# show_magicians(magicians)
+
+# 不变的魔术师 :修改你为完成练习8-10而编写的程序，在调用函数make_great() 时，向它传递魔术师列表的副本。由于不想修改原始列表，请返回修改后的 列表，并将其存储到另一个列表中。
+# 分别使用这两个列表来调用show_magicians() ，确认一个列表包含的是原来的魔术师名字，而另一个列表包含的是添加了字 样“the Great”的魔术师名字
+
+new_magicians = make_great(magicians[:])
+show_magicians(magicians)
+show_magicians(new_magicians)
+
+# 传递任意数量的实参
+def make_pizza(*toppings):
+    print(toppings)
+make_pizza('pepperoni')
+make_pizza('mushrooms', 'green peppers', 'extra cheese')
+
+# 使用任意数量的关键字实参
+def build_profile(first, last, **user_info):
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+user_profile = build_profile('albert', 'einstein', location='princeton',field='physics')
+print(user_profile)
+
+# 三明治 :编写一个函数，它接受顾客要在三明治中添加的一系列食材。
+# 这个函数只有一个形参(它收集函数调用中提供的所有食材)，并打印一条消息，对顾客 点的三明治进行概述。
+# 调用这个函数三次，每次都提供不同数量的实参。
+def make_sandwich(*materials):
+    print("the sandwich is made with:")
+    for material in materials:
+        print(material)
+make_sandwich("a", 'b', 'c')
+make_sandwich("ddd")
+
+# 用户简介 :复制前面的程序user_profile.py，在其中调用build_profile() 来创建有关你的简介;
+# 调用这个函数时，指定你的名和姓，以及三个描述你的键-值对
+my_profile = build_profile('qiang', 'yan', age=29, school='sdgs')
+print(my_profile)
+
+# 汽车 :编写一个函数，将一辆汽车的信息存储在一个字典中。这个函数总是接受制造商和型号，还接受任意数量的关键字实参。
+# 这样调用这个函数:提供必不可 少的信息，以及两个名称—值对，如颜色和选装配件。这个函数必须能够像下面这样进行调用
+# car = make_car('subaru', 'outback', color='blue', tow_package=True)   打印返回的字典，确认正确地处理了所有的信息。
+def make_car(brand, outback, **property):
+    details = {}
+    details['brand'] = brand
+    details['outback'] = outback
+    for k, v in property.items():
+        details[k] = v
+    return details
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+print(car)
+
