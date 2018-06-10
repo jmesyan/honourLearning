@@ -1,3 +1,6 @@
+# import pizza
+# from pizza import make_pizza
+from pizza import make_pizza as mp
 # 定义函数
 def greet_user():
     print("hello")
@@ -191,4 +194,15 @@ def make_car(brand, outback, **property):
     return details
 car = make_car('subaru', 'outback', color='blue', tow_package=True)
 print(car)
+
+# 引入模块
+# pizza.make_pizza(16, 'pepperoni')
+# pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+#引入模块函数
+# make_pizza(16, 'pepperoni')
+# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+#引入模块函数并别名
+mp(16, 'pepperoni')
+mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+
 
