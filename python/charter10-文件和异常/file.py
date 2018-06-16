@@ -49,4 +49,51 @@ with open("learning_python.txt") as file:
     contents = file.read()
     print(contents.replace("Python", "C"))
 
+# 写入空文件
+filename = 'programming.txt'
+with open(filename, 'w') as file_object:
+    file_object.write("I love programming.")
+
+# 写入多行
+filename = 'programming.txt'
+with open(filename, 'w') as file_object:
+    file_object.write("I love programming.\n")
+    file_object.write("I love creating new games.\n")
+
+# 附加到文件 -使用模式-“a”
+filename = 'programming.txt'
+with open(filename, 'a') as file_object:
+    file_object.write("I also love finding meaning in large datasets.\n")
+    file_object.write("I love creating apps that can run in a browser.\n")
+
+# 访客 :编写一个程序，提示用户输入其名字;用户作出响应后，将其名字写入到文件guest.txt中
+# username = input("请输入你的用户名")
+# filename = "guest.txt"
+# with open(filename, "a") as file_object:
+#     file_object.write(username+"\n")
+
+#访客名单 :编写一个while 循环，提示用户输入其名字。用户输入其名字后，在屏幕上打印一句问候语，并将一条访问记录添加到文件guest_book.txt中。
+# 确保这个文件中的每条记录都独占一行。
+# filename = "guest_book.txt"
+# while(True):
+#     username = input("请输入你的姓名")
+#     if username == "quit":
+#         break
+#     print("Hello "+ username)
+#     with open(filename, "a") as file_object:
+#         file_object.write(username+"\n")
+
+# 关于编程的调查 :编写一个while 循环，询问用户为何喜欢编程。每当用户输入一个原因后，都将其添加到一个存储所有原因的文件中。
+# while True:
+#     reason = input("你为何喜欢编程")
+#     if reason == "quit" : break
+#     with open("q.txt", "a") as file_object:
+#         file_object.write(reason+"\n")
+
+
+
+
+
+
+
 
