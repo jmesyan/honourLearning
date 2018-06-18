@@ -1,3 +1,0 @@
-In Python you can Beautiful is better than ugly.
-In Python you can Explicit is better than implicit.
-In Python you canSimple is better than complex.
